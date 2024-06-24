@@ -3,7 +3,7 @@
 
     <footer class="pt-12 bg-secondary" style="background:#F7F7F7;">
         <div class="container">
-            <h2 class="mb-5" style="font-size: 19px;text-align: center; ">{{ $t('label.followlavui') }}</h2>
+            <h2 class="fent mb-5" style="font-size: 19px;">{{ $t('label.followlavui') }}</h2>
             <nav v-if="setting.social_media_facebook || setting.social_media_twitter || setting.social_media_instagram || setting.social_media_youtube || setting.social_media_linkedin || setting.social_media_youtube || setting.social_media_snapchat || setting.social_media_tiktok|| setting.social_media_clubhouse"
                  class="flex flex-wrap items-center gap-6 tablet:justify-center" style="justify-content: space-between">
                 <div class="flex flex-wrap items-center gap-6 tablet:justify-center">
@@ -232,6 +232,9 @@ export default {
 </script>
 <style scoped>
     @media (max-width: 639px) {
+        .fent{
+            text-align: center;
+        }
         .sev{
             text-align: center;
             width: 100%;

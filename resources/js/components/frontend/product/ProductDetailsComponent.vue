@@ -3,41 +3,42 @@
     <section class="mb-12 mt-8">
         <div class="container">
             <div class="row">
-                <div class="flex col-12 sm:col-6 lg:col-7">
-                    <div class="col-12 sm:col-6 lg:col-8">
+                <div class="imgsize mb-6 flex col-12 sm:col-6 lg:col-7">
+                    <div class="imgsize col-12 sm:col-6 lg:col-8">
                     <Swiper dir="ltr" :spaceBetween="5" :navigation="true" :thumbs="{ swiper: thumbsSwiper }"
                             :modules="modules" class="gallery-swiper">
-                        <SwiperSlide>
-                            <img class="rounded-2xl" src="/طول-1410-عرض-1130.jpg" alt="gallery" loading="lazy" style="width:565px; height: 705px;object-fit: cover"/>
+                        <SwiperSlide class="imgsize">
+                            <img class="rounded-2xl imgsize" src="/طول-1410-عرض-1130.jpg" alt="gallery" loading="lazy" style="width:565px; height: 705px;object-fit: cover"/>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img class="rounded-2xl" src="/طول-1410-عرض-1130.jpg" alt="gallery" loading="lazy" style="width:565px; height: 705px;object-fit: cover"/>
+                            <img class="rounded-2xl imgsize" src="/طول-1410-عرض-1130.jpg" alt="gallery" loading="lazy" style="width:565px; height: 705px;object-fit: cover"/>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <img class="rounded-2xl" src="/طول-1410-عرض-1130.jpg" alt="gallery" loading="lazy" style="width:565px; height: 705px;object-fit: cover"/>
+                            <img class="rounded-2xl imgsize" src="/طول-1410-عرض-1130.jpg" alt="gallery" loading="lazy" style="width:565px; height: 705px;object-fit: cover"/>
                         </SwiperSlide>
                         <SwiperSlide  >
-                            <img class="rounded-2xl" src="/طول-1410-عرض-1130.jpg" alt="gallery" loading="lazy" style="width:565px; height: 705px;object-fit: cover"/>
+                            <img class="rounded-2xl imgsize" src="/طول-1410-عرض-1130.jpg" alt="gallery" loading="lazy" style="width:565px; height: 705px;object-fit: cover"/>
                         </SwiperSlide>
                     </Swiper>
                     </div>
-                    <div class="col-12 sm:col-6 lg:col-3">
-                    <Swiper dir="ltr" @swiper="setThumbsSwiper" :freeMode="true"
-                            :watchSlidesProgress="true" :modules="modules" class="thumb-swiper swiper-vertical">
-                        <SwiperSlide style="width:87px;">
-                            <img src="/طول-1410-عرض-1130.jpg" alt="gallery" loading="lazy" style="height:116px; width: 87px;object-fit: cover"/>
-                        </SwiperSlide>
-                        <SwiperSlide style="width:87px;">
-                            <img src="/طول-1410-عرض-1130.jpg" alt="gallery" loading="lazy" style="height:116px; width: 87px"/>
-                        </SwiperSlide>
-                        <SwiperSlide style="width:87px;">
-                            <img src="/طول-1410-عرض-1130.jpg" alt="gallery" loading="lazy" style="height:116px; width: 87px"/>
-                        </SwiperSlide>
-                        <SwiperSlide style="width: 87px;">
-                            <img src="/طول-1410-عرض-1130.jpg" alt="gallery" loading="lazy" style="height:116px; width: 87px"/>
-                        </SwiperSlide>
-                    </Swiper>
+                    <div class="col-12 sm:col-6 lg:col-3 hidden sm:block">
+                        <Swiper dir="ltr" @swiper="setThumbsSwiper" :freeMode="true"
+                                :watchSlidesProgress="true" :modules="modules" class="thumb-swiper swiper-vertical">
+                            <SwiperSlide style="width:87px;">
+                                <img src="/طول-1410-عرض-1130.jpg" alt="gallery" loading="lazy" style="height:116px; width: 87px; object-fit: cover"/>
+                            </SwiperSlide>
+                            <SwiperSlide style="width:87px;">
+                                <img src="/طول-1410-عرض-1130.jpg" alt="gallery" loading="lazy" style="height:116px; width: 87px"/>
+                            </SwiperSlide>
+                            <SwiperSlide style="width:87px;">
+                                <img src="/طول-1410-عرض-1130.jpg" alt="gallery" loading="lazy" style="height:116px; width: 87px"/>
+                            </SwiperSlide>
+                            <SwiperSlide style="width: 87px;">
+                                <img src="/طول-1410-عرض-1130.jpg" alt="gallery" loading="lazy" style="height:116px; width: 87px"/>
+                            </SwiperSlide>
+                        </Swiper>
                     </div>
+
                 </div>
 
 
@@ -64,9 +65,9 @@
                                         :variations="initialVariations"/>
 
                     <dl class="flex flex-wrap items-center gap-x-6 gap-y-3 mb-8">
-                        <div class="flex flex-col md:flex-row gap-4">
+                        <div class="flex flex-row md:flex-row gap-1">
                             <div class="flex flex-col items-center md:items-start">
-                                <div class="flex items-center border rounded-lg border-gray-300 p-4 md:w-60" style="width: 15rem;">
+                                <div class="rem flex items-center border rounded-lg border-gray-300 p-4 md:w-60" style="width: 15rem;">
                                     <p
                                         class="text-sm font-medium text-right leading-5 text-gray-900"
                                         dir="rtl"
@@ -82,7 +83,7 @@
                                 />
                             </div>
                             <div class="flex flex-col items-center md:items-start">
-                                <div class="flex items-center border rounded-lg border-gray-300 p-4 md:w-60" style="width: 15rem;">
+                                <div class="rem flex items-center border rounded-lg border-gray-300 p-4 md:w-60" style="width: 15rem;">
                                     <p
                                         class="text-sm font-medium text-right leading-5 text-gray-900"
                                         dir="rtl"
@@ -205,27 +206,27 @@
             <div class="row">
                 <div class="col-12" dir="rtl">
                     <div class="rounded-[10px] border border-[#D9DBE9]">
-                        <nav class="flex flex-wrap items-center p-4 sm:py-6 sm:px-8 gap-3 sm:gap-6">
+                        <nav class="flex flex-wrap items-center p-4 sm:py-6 sm:px-8 gap-1 sm:gap-6">
                             <button type="button"
                                     @click.prevent="multiTargets($event, 'tab-btn', 'tab-div', 'tab_details')"
-                                    class="tab-btn active text-sm sm:text-base font-bold leading-5 capitalize py-2 sm:py-3.5 px-5 sm:px-8 rounded-xl">
+                                    class="fent tab-btn active text-sm sm:text-base font-bold leading-5 capitalize py-2 sm:py-3.5 px-4 sm:px-8 rounded-xl">
                                 معلومات المنتج
                             </button>
 
                             <button type="button"
                                     @click.prevent="multiTargets($event, 'tab-btn', 'tab-div', 'tab_videos')"
-                                    class="tab-btn text-sm sm:text-base font-bold leading-5 capitalize py-2 sm:py-3.5 px-5 sm:px-8 rounded-xl ">
+                                    class="fent tab-btn text-sm sm:text-base font-bold leading-5 capitalize py-2 sm:py-3.5 px-4 sm:px-8 rounded-xl ">
                                 المصمم
                             </button>
 
                             <button type="button"
                                     @click.prevent="multiTargets($event, 'tab-btn', 'tab-div', 'tab_reviews')"
-                                    class="tab-btn text-sm sm:text-base font-bold leading-5 capitalize py-2 sm:py-3.5 px-5 sm:px-8 rounded-xl ">
+                                    class="fent tab-btn text-sm sm:text-base font-bold leading-5 capitalize py-2 sm:py-3.5 px-4 sm:px-8 rounded-xl ">
                                 ملامح
                             </button>
                             <button type="button"
                                     @click.prevent="multiTargets($event, 'tab-btn', 'tab-div', 'tab_shipping_and_return')"
-                                    class="tab-btn text-sm sm:text-base font-bold leading-5 capitalize py-2 sm:py-3.5 px-5 sm:px-8 rounded-xl ">
+                                    class="fent tab-btn text-sm sm:text-base font-bold leading-5 capitalize py-2 sm:py-3.5 px-4 sm:px-8 rounded-xl ">
                                 الشحن والارجاع
                             </button>
                         </nav>
@@ -265,10 +266,9 @@
                         </div>
 
                         <div id="tab_videos" class="tab-div p-4 sm:p-8 sm:pt-6 border-t border-[#D9DBE9]">
-                            <div class="flex p-8 gap-5" style="direction: ltr">
-                                <img src="/mosamm.jpeg" alt="Dior Banner" class="h-auto" width="50%"/>
-
-                                <div class="pl-6 flex flex-col justify-center" style="width: 50%">
+                            <div class="flex flex-col sm:flex-row p-4 sm:p-8 gap-5" style="direction: ltr">
+                                <img src="/mosamm.jpeg" alt="Dior Banner" class="w-full sm:w-1/2 h-auto" />
+                                <div class="sm:pl-6 flex flex-col justify-center w-full sm:w-1/2">
                                     <p class="text-lg font-medium text-right text-gray-900 leading-relaxed" dir="rtl">
                                         ميو ميو علامة أزياء مشهورة تأسست في عام 1993 في إيطاليا، وتعتبر العلامة التجارية الشقيقة لدار الأزياء الأيقونية برادا.
                                         جوهر ميو ميو يكمن في إعادة تعريف تصورات التأنق التقليدية للأنوثة، وتقديم رحلة أزياء فريدة وغير تقليدية للنساء.
@@ -278,6 +278,7 @@
                                 </div>
                             </div>
                         </div>
+
 
                         <div id="tab_reviews" class="tab-div p-4 sm:p-8 sm:pt-6 border-t border-[#D9DBE9]">
                             <div class="bg-gray-100 p-8">
@@ -316,8 +317,12 @@
                     {{ $t('label.related_products') }}
                 </h2>
             </div>
-            <div class="grid grid-cols-12 md:grid-cols-12 lg:grid-cols-12 gap-4 sm:gap-6">
+            <div>
                 <ProductRelatedComponent />
+            </div>
+
+            <div class="mt-5 mb-5">
+                <GeneralBannerComponent />
             </div>
         </div>
     </section>
@@ -706,12 +711,18 @@ export default {
     width: 100%;
     padding: 10px 0;
 }
-
 .cursor-pointer {
     cursor: pointer;
 }
-
-.border-blue-600 {
-    border-color: #2563eb;
+@media (max-width: 639px) {
+    .imgsize{
+        height: 396px!important;
+    }
+    .rem{
+        width: 12.5rem!important;
+    }
+    .fent{
+        font-size: 13px!important;
+    }
 }
 </style>

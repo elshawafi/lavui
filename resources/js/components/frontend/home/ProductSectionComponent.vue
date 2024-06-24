@@ -71,42 +71,7 @@
                     {{ $t('label.showallproducts') }}
                 </router-link>
             </div>
-            <Swiper
-                v-if="products.length > 0"
-                :slides-per-view="5"
-                :speed="1000"
-                :loop="true"
-                :navigation="true"
-                :pagination="false"
-                :autoplay="{ delay: 2500 }"
-                :modules="modules"
-                :breakpoints="{
-                  320: {
-                    slidesPerView: 2.25,
-                    spaceBetween: 10
-                  },
-                  480: {
-                    slidesPerView: 2,
-                    spaceBetween: 20
-                  },
-                  768: {
-                    slidesPerView: 3,
-                    spaceBetween: 30
-                  },
-                  1024: {
-                    slidesPerView: 4,
-                    spaceBetween: 40
-                  },
-                  1200: {
-                    slidesPerView: 5,
-                    spaceBetween: 10
-                  }
-                }"
-                class="banner-swiper">
-                <SwiperSlide v-for="product in products">
-                    <CardComponent :product="product" />
-                </SwiperSlide>
-            </Swiper>
+
         </div>
     </section>
 </template>

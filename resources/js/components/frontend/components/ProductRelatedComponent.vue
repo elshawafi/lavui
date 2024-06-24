@@ -13,7 +13,7 @@
                 :modules="modules"
                 :breakpoints="{
                   320: {
-                    slidesPerView: 1,
+                    slidesPerView: 2.25,
                     spaceBetween: 10
                   },
                   480: {
@@ -79,10 +79,6 @@ export default {
                     status: statusEnum.ACTIVE
                 }
             },
-            expireDate: '2024-06-15T00:00:00', // Set your expiry date here
-            hours: 0,
-            minutes: 0,
-            seconds: 0
         }
     },
     computed: {
@@ -100,32 +96,8 @@ export default {
         }).catch((err) => {
             this.loading.isActive = false;
         });
-
-        // Calculate time left immediately and every second
-        this.calculateTimeLeft();
-        setInterval(this.calculateTimeLeft, 1000);
     },
     methods: {
-        calculateTimeLeft() {
-            const currentTime = new Date();
-            const expireTime = new Date(this.expireDate);
-            const difference = expireTime - currentTime;
-
-            if (difference > 0) {
-                this.hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                this.minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                this.seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-                // Format hours, minutes, and seconds to always display two digits
-                this.hours = this.formatNumber(this.hours);
-                this.minutes = this.formatNumber(this.minutes);
-                this.seconds = this.formatNumber(this.seconds);
-            } else {
-                this.hours = "00";
-                this.minutes = "00";
-                this.seconds = "00";
-            }
-        },
         formatNumber(number) {
             return number < 10 ? '0' + number : number;
         }

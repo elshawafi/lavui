@@ -1,6 +1,6 @@
 <template>
-    <div v-if="status && setting.cookies_summary"  :class="activeClass" 
-        class=" translate-y-0 w-full max-w-full sm:max-w-xs p-4 fixed bottom-0 ltr:left-0 rtl:right-0 sm:bottom-6 ltr:sm:left-6 rtl:sm:right-6 z-50 rounded-t-2xl sm:rounded-2xl shadow-cookies bg-white transition-all duration-500">
+    <div v-if="status && setting.cookies_summary" :class="activeClass"
+         class="translate-y-0 w-full max-w-full sm:max-w-xs p-4 fixed bottom-0 ltr:left-0 rtl:right-0 sm:bottom-6 ltr:sm:left-6 rtl:sm:right-6 z-50 rounded-t-2xl sm:rounded-2xl shadow-cookies bg-white transition-all duration-500">
         <div class="flex items-center gap-2 mb-4">
             <i class="lab-fill-cookie-bite text-heading"></i>
             <h3 class="font-bold capitalize">{{ $t('label.about_our_privacy') }}</h3>
@@ -8,19 +8,23 @@
         <p class="text-sm mb-4 text-heading">
             {{ setting.cookies_summary }}
         </p>
-        <div class="flex items-center gap-4">
+        <div class="flex flex-col sm:flex-row items-center gap-4">
             <button @click.prevent="change(false)" type="button"
-                class="w-full h-[38px] rounded-r ltr:rounded-l-3xl rtl:rounded-r-3xl tracking-wide text-center font-bold capitalize border border-[#D9DBE9] bg-white text-heading">{{
-                    $t('button.decline') }}</button>
+                    class="w-full h-[38px] rounded-r ltr:rounded-l-3xl rtl:rounded-r-3xl tracking-wide text-center font-bold capitalize border border-[#D9DBE9] bg-white text-heading">
+                {{ $t('button.decline') }}
+            </button>
             <button @click.prevent="change(true)" type="button"
-                class="w-full h-[38px] rounded-l ltr:rounded-r-3xl rtl:rounded-l-3xl tracking-wide text-center font-bold capitalize border border-primary bg-primary text-white">{{
-                    $t('button.accept') }}</button>
+                    class="w-full h-[38px] rounded-l ltr:rounded-r-3xl rtl:rounded-l-3xl tracking-wide text-center font-bold capitalize border border-primary bg-primary text-white">
+                {{ $t('button.accept') }}
+            </button>
         </div>
         <router-link v-if="slug !== 'not-found'" class="capitalize text-sm leading-6 underline text-primary"
-                     :to="{ name : 'frontend.page', params: {slug: slug} }">
+                     :to="{ name: 'frontend.page', params: { slug: slug } }">
             {{ $t('label.cookies_settings') }}
         </router-link>
     </div>
+
+
 </template>
 <script>
 import axios from "axios";
@@ -63,3 +67,23 @@ export default {
     }
 }
 </script>
+<style scoped>
+    @media (max-width: 639px) {
+        .rounded-t-2xl {
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+        }
+        .rounded-2xl {
+            border-radius: 1rem;
+        }
+        .translate-y-0 {
+            transform: translateY(0);
+        }
+        .shadow-cookies {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .tracking-wide {
+            letter-spacing: 0.05em;
+        }
+    }
+</style>
