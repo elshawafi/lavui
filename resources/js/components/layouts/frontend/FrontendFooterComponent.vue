@@ -85,9 +85,14 @@
                 <div class="col-12 md:col-8 lg:col-5">
                     <div class="row row1">
                         <div class="col-6 sm:col-4 mb-4 sm:mb-0">
-                            <h4 class="text-[22px] font-semibold capitalize mb-6 text-white">{{ $t('label.support') }}</h4>
-                            <nav v-if="supportPages.length > 0" class="flex flex-col gap-4">
-                                <router-link v-for="supportPage in supportPages"
+                            <div @click="toggleSupport" class="dropdown-header mobile-only">
+                                <h4 class="text-[22px] font-semibold capitalize mb-6 text-white cursor-pointer">
+                                    {{ $t('label.support') }}
+                                    <i class="fa-solid fa-caret-down mobile-only-icon"></i>
+                                </h4>
+                            </div>
+                            <nav v-if="supportOpen || !isMobile" class="flex flex-col gap-4">
+                                <router-link v-for="supportPage in supportPages" :key="supportPage.slug"
                                              class="w-fit text-sm font-medium capitalize text-white transition-all duration-300 hover:text-primary"
                                              :to="{ name: 'frontend.page', params: { slug: supportPage.slug } }">
                                     {{ supportPage.title }}
@@ -95,9 +100,14 @@
                             </nav>
                         </div>
                         <div class="col-6 sm:col-4 mb-4 sm:mb-0">
-                            <h4 class="text-[22px] font-semibold capitalize mb-6 text-white">{{ $t('label.legal') }}</h4>
-                            <nav v-if="legalPages.length > 0" class="flex flex-col gap-4">
-                                <router-link v-for="legalPage in legalPages"
+                            <div @click="toggleLegal" class="dropdown-header mobile-only">
+                                <h4 class="text-[22px] font-semibold capitalize mb-6 text-white cursor-pointer">
+                                    {{ $t('label.legal') }}
+                                    <i class="fa-solid fa-caret-down mobile-only-icon"></i>
+                                </h4>
+                            </div>
+                            <nav v-if="legalOpen || !isMobile" class="flex flex-col gap-4">
+                                <router-link v-for="legalPage in legalPages" :key="legalPage.slug"
                                              class="w-fit text-sm font-medium capitalize text-white transition-all duration-300 hover:text-primary"
                                              :to="{ name: 'frontend.page', params: { slug: legalPage.slug } }">
                                     {{ legalPage.title }}
@@ -105,9 +115,13 @@
                             </nav>
                         </div>
                         <div class="col-12 sm:col-4">
-                            <h4 class="text-[22px] font-semibold capitalize mb-6 text-white">
-                                {{ $t('label.contact') }}</h4>
-                            <ul class="flex flex-col gap-5">
+                            <div @click="toggleContact" class="dropdown-header mobile-only">
+                                <h4 class="text-[22px] font-semibold capitalize mb-6 text-white cursor-pointer">
+                                    {{ $t('label.contact') }}
+                                    <i class="fa-solid fa-caret-down mobile-only-icon"></i>
+                                </h4>
+                            </div>
+                            <ul v-if="contactOpen || !isMobile" class="flex flex-col gap-5">
                                 <li class="flex gap-3">
                                     <i class="lab-fill-location text-sm flex-shrink-0 text-white"></i>
                                     <span class="text-sm font-medium text-white">{{ setting.company_address }}</span>
@@ -121,10 +135,6 @@
                                     <span class="text-sm font-medium text-white">{{ setting.company_phone }}</span>
                                 </li>
                             </ul>
-
-                            <dl class="mt-6">
-
-                            </dl>
                         </div>
                     </div>
                 </div>
@@ -169,6 +179,10 @@ export default {
     components: { LoadingComponent },
     data() {
         return {
+            supportOpen: false,
+            legalOpen: false,
+            contactOpen: false,
+            isMobile: false,
             loading: {
                 isActive: false,
             },
@@ -194,6 +208,8 @@ export default {
         }
     },
     mounted() {
+        this.checkMobile();
+        window.addEventListener('resize', this.checkMobile);
         this.loading.isActive = true;
         this.$store.dispatch("frontendPage/lists", {
             paginate: 0,
@@ -214,8 +230,21 @@ export default {
         }).catch((err) => {
             this.loading.isActive = false;
         });
+
     },
     methods: {
+        toggleSupport() {
+            this.supportOpen = !this.supportOpen;
+        },
+        toggleLegal() {
+            this.legalOpen = !this.legalOpen;
+        },
+        toggleContact() {
+            this.contactOpen = !this.contactOpen;
+        },
+        checkMobile() {
+            this.isMobile = window.innerWidth <= 768;
+        },
         saveSubscription: function () {
             const url = '/frontend/subscriber';
             this.loading.isActive = true;
@@ -231,6 +260,9 @@ export default {
 }
 </script>
 <style scoped>
+    .dropdown-header {
+        cursor: pointer;
+    }
     @media (max-width: 639px) {
         .fent{
             text-align: center;
@@ -254,6 +286,11 @@ export default {
         .row1{
             display: block!important;
             direction: rtl!important;
+        }
+    }
+    @media (min-width: 769px) {
+        .mobile-only-icon {
+            display: none;
         }
     }
 </style>

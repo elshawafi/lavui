@@ -92,10 +92,9 @@ export default {
 </script>
 <style scoped>
     .ses{
-        display: flex!important;
-        align-items: center!important;
-        justify-content: center!important;
-        flex-wrap: wrap!important;
+        text-align: center;
+        position: relative;
+        transform: translateY(18%);
     }
     @media (max-width: 639px) {
         .container{
