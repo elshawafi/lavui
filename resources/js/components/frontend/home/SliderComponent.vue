@@ -14,7 +14,7 @@
                     </div>
                     <div v-else>
                         <!--                        <img class="w-full" :src="slider.image" alt="banner" loading="lazy">-->
-                        <img class="w-full" src="/discount.png" alt="banner" loading="lazy" style="height: 454px">
+                        <img class="w-full sise" src="/discount.png" alt="banner" loading="lazy" style="height: 454px">
                     </div>
                 </SwiperSlide>
             </Swiper>
@@ -78,6 +78,9 @@ export default {
     }
     .res{
         height: 178px!important;
+    }
+    .sise{
+        height: 179px!important;
     }
 }
 

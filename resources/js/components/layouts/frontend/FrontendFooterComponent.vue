@@ -3,9 +3,11 @@
 
     <footer class="pt-12 bg-secondary" style="background:#F7F7F7;">
         <div class="container">
-            <h2 class="fent mb-5" style="font-size: 19px;">{{ $t('label.followlavui') }}</h2>
+
             <nav v-if="setting.social_media_facebook || setting.social_media_twitter || setting.social_media_instagram || setting.social_media_youtube || setting.social_media_linkedin || setting.social_media_youtube || setting.social_media_snapchat || setting.social_media_tiktok|| setting.social_media_clubhouse"
                  class="flex flex-wrap items-center gap-6 tablet:justify-center" style="justify-content: space-between">
+               <div class="des">
+                <h2 class="fent" style="font-size: 19px;text-align: center;margin-bottom: 3rem;">{{ $t('label.followlavui') }}</h2>
                 <div class="flex flex-wrap items-center gap-6 tablet:justify-center">
                     <a v-if="setting.social_media_linkedin" target="_blank" :href="setting.social_media_linkedin"
                        class="lab-fill-linkedin w-7 h-7 !leading-7 text-center text-sm text-secondary"
@@ -35,6 +37,7 @@
                        class="lab-fill-clubhousew-7 h-7 !leading-7 text-center text-sm text-secondary"
                        style="font-size: 22px"></a>
                 </div>
+               </div>
                 <form @submit.prevent="saveSubscription" style="width:415px;display: inline-block;direction: rtl" class="mt-5 mb-6" >
                     <h2 class="mb-5" style="font-size: 19px;text-align: center; ">{{ $t('label.subscribetothenewsletter') }}</h2>
                     <br>
@@ -63,8 +66,9 @@
                             <img class="mb-8 w-36" src="/logo.png" alt="logo" loading="lazy">
                         </router-link>
 
-                        <p>testtesttesttesttesttesttesttesttesttesttesttesttes
-                           </p>
+                        <p class="texs">
+                            هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق. إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد، النص لن يبدو مقسما ولا يحوي أخطاء لغوية، مولد النص العربى مفيد لمصممي المواقع على وجه الخصوص
+                        </p>
 
                         <!--                        <form @submit.prevent="saveSubscription" class="mt-5 mb-6 block">-->
                         <!--                            <label class="mb-3 font-medium text-white">-->
@@ -84,7 +88,7 @@
                 </div>
                 <div class="col-12 md:col-8 lg:col-5">
                     <div class="row row1">
-                        <div class="col-6 sm:col-4 mb-4 sm:mb-0">
+                        <div class="col-12 sm:col-4 mb-4 sm:mb-0">
                             <div @click="toggleSupport" class="dropdown-header mobile-only">
                                 <h4 class="text-[22px] font-semibold capitalize mb-6 text-white cursor-pointer">
                                     {{ $t('label.support') }}
@@ -99,7 +103,7 @@
                                 </router-link>
                             </nav>
                         </div>
-                        <div class="col-6 sm:col-4 mb-4 sm:mb-0">
+                        <div class="col-12 sm:col-4 mb-4 sm:mb-0">
                             <div @click="toggleLegal" class="dropdown-header mobile-only">
                                 <h4 class="text-[22px] font-semibold capitalize mb-6 text-white cursor-pointer">
                                     {{ $t('label.legal') }}
@@ -264,8 +268,12 @@ export default {
         cursor: pointer;
     }
     @media (max-width: 639px) {
+        .des{
+            width: 100%;
+        }
         .fent{
             text-align: center;
+            margin-bottom: 1rem;
         }
         .sev{
             text-align: center;
@@ -286,6 +294,9 @@ export default {
         .row1{
             display: block!important;
             direction: rtl!important;
+        }
+        .texs{
+            display: none;
         }
     }
     @media (min-width: 769px) {
