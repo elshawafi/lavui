@@ -163,7 +163,10 @@
             </div>
         </div>
         <div class="ses pt-4 pb-24 lg:py-4 flex mt-8 w-full text-center border-t border-white/5" style="text-align: left;background:#573c99;display: flex;align-items: center;justify-content: space-evenly;">
-            <p class="text-xs font-medium" style="color:#ffffff;font-size:17px ">{{ setting.site_copyright }}</p>
+            <p class="text-xs font-medium" style="color:#ffffff;font-size:17px ">
+<!--                {{ setting.site_copyright }}-->
+                جميع الحقوق محفوظة © v1.2.66
+            </p>
             <img src="/payments.png" alt="logo" loading="lazy" style="width: 20rem;height: inherit">
         </div>
     </footer>

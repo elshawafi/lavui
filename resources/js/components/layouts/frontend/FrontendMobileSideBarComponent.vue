@@ -4,12 +4,12 @@
             <div class="py-4 flex items-center justify-between px-4 border-b border-slate-100">
                 <router-link :to="{ name: 'frontend.home' }"
                              class="router-link-active router-link-exact-active flex-shrink-0">
-                    <img class="w-28 sm:w-32" src="/logo" alt="logo" loading="lazy">
+                    <img class="w-28 sm:w-32" src="/logo.png" alt="logo" loading="lazy">
                 </router-link>
 
                 <button type="button">
                     <i @click.prevent="hideTarget('mobile-sidebar-canvas', 'canvas-active')"
-                       class="lab-line-circle-cross text-xl text-danger"></i>
+                       class="lab-line-circle-cross text-xl text-lavui"></i>
                 </button>
             </div>
 
@@ -60,18 +60,39 @@
 
                 <h4 class="text-base font-bold capitalize mt-3 mb-3 !text-heading">{{ $t('label.follow_us') }}</h4>
                 <nav class="flex flex-wrap items-center gap-6 mb-7" v-if="setting.social_media_facebook || setting.social_media_twitter || setting.social_media_instagram || setting.social_media_youtube" >
-                    <a v-if="setting.social_media_facebook" target="_blank"
-                       :href="setting.social_media_facebook"
-                       class="lab-fill-facebook w-7 h-7 !leading-7 text-center rounded-full text-sm !text-heading bg-slate-200 transition-all duration-300 hover:text-white hover:bg-primary"></a>
+                    <a v-if="setting.social_media_linkedin" target="_blank" :href="setting.social_media_linkedin"
+                       class="lab-fill-linkedin w-7 h-7 !leading-7 text-center text-sm text-secondary"
+                       style="font-size: 22px"></a>
+
                     <a v-if="setting.social_media_twitter" target="_blank" :href="setting.social_media_twitter"
-                       class="lab-fill-twitter w-7 h-7 !leading-7 text-center rounded-full text-sm !text-heading bg-slate-200 transition-all duration-300 hover:text-white hover:bg-primary"></a>
-                    <a v-if="setting.social_media_instagram" target="_blank"
-                       :href="setting.social_media_instagram"
-                       class="lab-fill-instagram w-7 h-7 !leading-7 text-center rounded-full text-sm !text-heading bg-slate-200 transition-all duration-300 hover:text-white hover:bg-primary"></a>
+                       class="lab-fill-x w-7 h-7 !leading-7 text-center text-sm text-secondary"
+                       style="font-size: 22px"></a>
+
+                    <a v-if="setting.social_media_instagram" target="_blank" :href="setting.social_media_instagram"
+                       class="lab-fill-instagram w-7 h-7 !leading-7 text-center text-sm text-secondary"
+                       style="font-size: 22px"></a>
+
                     <a v-if="setting.social_media_youtube" target="_blank" :href="setting.social_media_youtube"
-                       class="lab-fill-youtube w-7 h-7 !leading-7 text-center rounded-full text-sm !text-heading bg-slate-200 transition-all duration-300 hover:text-white hover:bg-primary"></a>
+                       class="lab-fill-youtube w-7 h-7 !leading-7 text-center text-sm text-secondary"
+                       style="font-size: 22px"></a>
+                    <a v-if="setting.social_media_facebook" target="_blank" :href="setting.social_media_facebook"
+                       class="lab-fill-facebook w-7 h-7 !leading-7 text-center text-sm text-secondary"
+                       style="font-size: 22px"></a>
+                    <a v-if="setting.social_media_snapchat" target="_blank" :href="setting.social_media_snapchat"
+                       class="lab-fill-snapchat w-7 h-7 !leading-7 text-center text-sm text-secondary"
+                       style="font-size: 22px"></a>
+                    <a v-if="setting.social_media_tiktok" target="_blank" :href="setting.social_media_tiktok"
+                       class="lab-fill-tiktok w-7 h-7 !leading-7 text-center text-sm text-secondary"
+                       style="font-size: 22px"></a>
+                    <a v-if="setting.social_media_clubhouse" target="_blank" :href="setting.social_media_clubhouse"
+                       class="lab-fill-clubhousew-7 h-7 !leading-7 text-center text-sm text-secondary"
+                       style="font-size: 22px"></a>
                 </nav>
-                <p class="text-xs font-medium !text-heading">{{ setting.site_copyright }}</p>
+                <p class="text-xs font-medium !text-heading">
+<!--                    {{ setting.site_copyright }}-->
+                    جميع الحقوق محفوظة © v1.2.66
+
+                </p>
             </div>
         </div>
     </aside>
