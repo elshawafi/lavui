@@ -88,9 +88,9 @@
                 </div>
                 <div class="col-12 md:col-8 lg:col-5">
                     <div class="row row1">
-                        <div class="col-12 sm:col-4 mb-4 sm:mb-0">
+                        <div class="col-12 sm:col-4 mb-4 sm:mb-0 border-b">
                             <div @click="toggleSupport" class="dropdown-header mobile-only">
-                                <h4 class="text-[22px] font-semibold capitalize mb-6 text-white cursor-pointer">
+                                <h4 class="text-[22px] font-semibold capitalize mb-6 text-white cursor-pointer mb-4">
                                     {{ $t('label.support') }}
                                     <i class="fa-solid fa-caret-down mobile-only-icon"></i>
                                 </h4>
@@ -103,9 +103,9 @@
                                 </router-link>
                             </nav>
                         </div>
-                        <div class="col-12 sm:col-4 mb-4 sm:mb-0">
+                        <div class="col-12 sm:col-4 mb-4 sm:mb-0 border-b">
                             <div @click="toggleLegal" class="dropdown-header mobile-only">
-                                <h4 class="text-[22px] font-semibold capitalize mb-6 text-white cursor-pointer">
+                                <h4 class="text-[22px] font-semibold capitalize mb-6 text-white cursor-pointer mb-4">
                                     {{ $t('label.legal') }}
                                     <i class="fa-solid fa-caret-down mobile-only-icon"></i>
                                 </h4>
@@ -118,9 +118,9 @@
                                 </router-link>
                             </nav>
                         </div>
-                        <div class="col-12 sm:col-4">
+                        <div class="col-12 sm:col-4 border-b">
                             <div @click="toggleContact" class="dropdown-header mobile-only">
-                                <h4 class="text-[22px] font-semibold capitalize mb-6 text-white cursor-pointer">
+                                <h4 class="text-[22px] font-semibold capitalize mb-6 text-white cursor-pointer mb-4">
                                     {{ $t('label.contact') }}
                                     <i class="fa-solid fa-caret-down mobile-only-icon"></i>
                                 </h4>
@@ -163,7 +163,7 @@
             </div>
         </div>
         <div class="ses pt-4 pb-24 lg:py-4 flex mt-8 w-full text-center border-t border-white/5" style="text-align: left;background:#573c99;display: flex;align-items: center;justify-content: space-evenly;">
-            <p class="text-xs font-medium" style="color:#ffffff;font-size:17px ">
+            <p class="text-xs font-medium" style="color:#ffffff;font-size:17px;text-align: center ">
 <!--                {{ setting.site_copyright }}-->
                 جميع الحقوق محفوظة © v1.2.66
             </p>
