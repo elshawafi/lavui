@@ -1,16 +1,16 @@
 <template>
     <section class="mb-10 sm:mb-20">
         <div class="container">
-<!--            <div class="mb-6">-->
-<!--                <h2 class="text-[26px] leading-10 font-semibold capitalize mb-2">-->
-<!--                    {{ page.title }}-->
-<!--                </h2>-->
-<!--                <div v-if="page.image" class="w-full mb-6">-->
-<!--                    <img :src="page.image" alt="image" loading="lazy">-->
-<!--                </div>-->
-<!--                <div v-html="page.description">-->
-<!--                </div>-->
-<!--            </div>-->
+            <div class="mb-6">
+                <h2 class="text-[26px] leading-10 font-semibold capitalize mb-2">
+                    {{ page.title }}
+                </h2>
+                <div v-if="page.image" class="w-full mb-6">
+                    <img :src="page.image" alt="image" loading="lazy">
+                </div>
+                <div v-html="page.description">
+                </div>
+            </div>
             <TemplateManagerComponent :menuTemplateId="page.menu_template_id" />
         </div>
     </section>

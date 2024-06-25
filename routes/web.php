@@ -29,7 +29,6 @@ use Illuminate\Support\Facades\Route;
 //    Route::get('/final', [InstallerController::class, 'final'])->name('final');
 //    Route::get('/final-store', [InstallerController::class, 'finalStore'])->name('finalStore');
 //});
-
 Route::get('/', [RootController::class, 'index'])->name('home');
 Route::prefix('payment')->name('payment.')->group(function () {
     Route::get('/{paymentGateway:slug}/pay/{order}', [PaymentController::class, 'index'])->name('index');
